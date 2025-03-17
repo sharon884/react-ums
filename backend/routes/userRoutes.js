@@ -16,7 +16,7 @@ router.post("/profile/upload" , protect ,upload.single("profileImage"), userCont
 
 router.get("/profile", protect, userController.getUserProfile);
 
-router.put("/profile", protect,userController.updateUserProfile);
+router.put("/profile", protect,userController.updateUserProfile);//haiiiiiiii
 
 
 module.exports = router;
