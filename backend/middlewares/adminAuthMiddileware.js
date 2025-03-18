@@ -1,7 +1,7 @@
 const STATUS_CODES = require("../constants/statusCode");
 
 const adminAuth =  ( req , res , next ) => {
-
+console.log("+++++++++++++++"+req.user)
     if ( !req.user) {
         return res.status(STATUS_CODES.UNAUTHORIZED).json({ message : "unAuthorized access!"}); 
     }

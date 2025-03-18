@@ -69,7 +69,6 @@ const getUser = async (req, res) => {
   try {
     const { search, page = 1, limit = 5 } = req.query || " ";
     let filter = {};
-
     if (search) {
       filter = {
         $or: [
@@ -100,8 +99,43 @@ const getUser = async (req, res) => {
       .json({ message: " something error!" });
   }
 };
+
+const updateUser = async ( req , res ) => {
+  try {
+    const {id} = req.params;
+    const { name , email , role } = req.body;
+    const user = await User.findById(id);
+    if ( !user ) {
+      return res.status(STATUS_CODES.NOT_FOUND).json( { message : " user not found !"});
+    }
+       if ( name ) user.name = name;
+       if ( email ) user.email = email;
+       if (role) user.role = role;
+       await user.save();
+       res.status(STATUS_CODES.SUCCESS).json( { message : "user updated successfully !",user})
+
+  } catch ( error )  { 
+    console.error(error);
+    res.status(STATUS_CODES.SERVER_ERROR).json({ message : "something went wrong!" , error: error.message});
+  }
+}
+
+const deleteUser = async ( req , res, ) => {
+  try{
+    const {id} = req.params;
+    const user = await User.findByIdAndDelete(id);
+    if (!user) {
+      return res.status(STATUS_CODES.NOT_FOUND).json({ message : "user not found!"});
+    }
+    res.status(STATUS_CODES.SUCCESS).json( { message : " user deleted succesfully!"});
+  }catch ( error ) {
+    res.status(STATUS_CODES.SERVER_ERROR).json( { message: "unknown error!"});
+  }
+}
 module.exports = {
   adminLogin,
   getAdminDashboard,
-  getUser
+  getUser,
+  updateUser,
+  deleteUser
 };

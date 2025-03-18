@@ -8,6 +8,9 @@ const adminAuth = require("../middlewares/adminAuthMiddileware");
 router.post( "/login", validateLogin,adminControllers.adminLogin);
 
 router.get("/dashboard",protect,adminAuth,adminControllers.getAdminDashboard);
-router.get("/users", adminControllers.getUser);
+router.get("/users",protect,adminAuth, adminControllers.getUser);
+
+router.put("/users/:id",protect, adminAuth , adminControllers.updateUser);
+router.delete("/users/:id",protect,adminAuth,adminControllers.deleteUser);
 
 module.exports = router;
