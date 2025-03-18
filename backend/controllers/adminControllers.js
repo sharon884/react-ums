@@ -52,22 +52,56 @@ const getAdminDashboard = async (req, res) => {
     const adminCount = await User.countDocuments({ role: "admin" });
     // Fetch users with pagination
     const users = await User.find().skip(skip).limit(limit);
-    res
-      .status(STATUS_CODES.SUCCESS)
-      .json({
-        message: "admin Dashboard Data ! ",
-        totalUsers,
-        adminCount,
-        users,
-        currentPage: page,
+    res.status(STATUS_CODES.SUCCESS).json({
+      message: "admin Dashboard Data ! ",
+      totalUsers,
+      adminCount,
+      users,
+      currentPage: page,
       totalPages: Math.ceil(totalUsers / limit),
-      });
+    });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong!" });
   }
 };
 
+const getUser = async (req, res) => {
+  try {
+    const { search, page = 1, limit = 5 } = req.query || " ";
+    let filter = {};
+
+    if (search) {
+      filter = {
+        $or: [
+          { name: { $regex: search, $options: "i" } },
+          { email: { $regex: search, $options: "i" } },
+        ],
+      };
+
+      const user = await User.find(filter)
+        .skip((page - 1) * limit) // Skip users from previous pages
+        .limit(Number(limit));
+
+      const totalUsers = await User.countDocuments(filter);
+
+      res
+        .status(STATUS_CODES.SUCCESS)
+        .json({
+          message: " user fetched successfully!",
+          user,
+          totalPages: Math.ceil(totalUsers / limit),
+          currentPage: Number(page),
+          totalUsers,
+        });
+    }
+  } catch (error) {
+    res
+      .status(STATUS_CODES.SERVER_ERROR)
+      .json({ message: " something error!" });
+  }
+};
 module.exports = {
   adminLogin,
   getAdminDashboard,
+  getUser
 };

@@ -17,14 +17,15 @@ app.use(express.json());//formata data to json
 app.use(cookieParser());
 app.use("/uploads", express.static("uploads")); // Serve uploaded files as static
 
+app.get("/", (req, res) => {
+    res.send("Server is running...");
+  });
+  
 const PORT = process.env.PORT||5001
 const Mongo_URI = process.env.Mongo_URI|| "mongodb://localhost:27017/user";
 
 
-mongoose.connect(Mongo_URI,{
-    useNewUrlParser: true,  //latest url parsing connetion method allowing
-    useUnifiedTopology: true, //enable mongodb new connection management engine
-})
+mongoose.connect(Mongo_URI)
 .then(()=>console.log("mongo db connected suceesfully!"))
 .catch((err)=>console.log("mongo db connecting failed!"));
 
