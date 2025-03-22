@@ -1,19 +1,36 @@
-import React from 'react';
+import React from 'react'
+import { useSelector , useDispatch } from 'react-redux';
+import { logout } from '../../redux/slices/authslice';
 import { Link } from 'react-router-dom';
-import "./Navbar.css";
+import { useNavigate } from 'react-router-dom';
+import "./Navbar.css"
 
-const Navbar = () => {
-    return (
-        <div className='navbar-container'>
-            <h2 className='my-logo'>my app</h2>
-            <ul className='navbar-links'>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/signup">SignUp</Link></li>
-                <li><Link to="/login">Login</Link></li>
-            </ul>
+const  Navbar = () => {
+    const dispatch = useDispatch();
+    const { isAuthenticated } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
 
-        </div>
-    )
-}
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate("/login");
+    }
+  return (
+    <nav className="navbar">
+    <Link to="/" className="nav-link">Home</Link>
+    {isAuthenticated ? (
+      <>
+        <Link to="/profile" className="nav-link">Profile</Link>
+        <button onClick={handleLogout} className="nav-button">Logout</button>
+      </>
+    ) : (
+      <>
+        <Link to="/login" className="nav-link">Login</Link>
+        <Link to="/signup" className="nav-link">Signup</Link>
+      </>
+    )}
+  </nav>
+  
+  );
+};
 
-export default Navbar;
+export default Navbar

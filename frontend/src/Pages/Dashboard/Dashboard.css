@@ -1,0 +1,70 @@
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 76vh;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Dashboard Info */
+.dashboard-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  width: 350px;
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Dashboard Buttons */
+.dashboard-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Individual Button */
+.dashboard-button {
+  background: #4a90e2;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;       
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.dashboard-button:hover {
+  background: #357ABD;
+  transform: scale(1.05);
+}
