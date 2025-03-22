@@ -20,11 +20,11 @@ const registerUser = async (req, res) => {
 
     genarateToken(res, newUser._id);
 
-    res
+     return res
       .status(STATUS_CODES.CREATED)
       .json({ message: "user registered successfully", user: newUser });
   } catch (error) {
-    res.status(STATUS_CODES.SERVER_ERROR).json({
+   return res.status(STATUS_CODES.SERVER_ERROR).json({
       message: "Internal server error  ",
       error: error.message,
     });
@@ -130,14 +130,15 @@ const uploadImage = async (req, res) => {
         .status(STATUS_CODES.NOT_FOUND)
         .json({ message: " user not found!" });
     }
-    user.profileImg = req.file.path;
+    const imagePath = req.file.path.replace(/\\/g, "/");
+    user.profileImage = imagePath;
     await user.save();
 
     res
       .status(STATUS_CODES.CREATED)
       .json({
         message: " file uploaded successfully!",
-        profileImage: user.profileImg,
+       user
       });
   } catch (error) {
     console.error(error);

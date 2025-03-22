@@ -1,6 +1,7 @@
 const dotenv = require("dotenv")
 dotenv.config();
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
@@ -9,13 +10,13 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: "http://localhost:5174", // Replace with your frontend URL
     credentials: true, // Allow cookies in requests
 })
 );//intrace with frontend and backend
 app.use(express.json());//formata data to json 
 app.use(cookieParser());
-app.use("/uploads", express.static("uploads")); // Serve uploaded files as static
+app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // Serve uploaded files as static
 
 app.get("/", (req, res) => {
     res.send("Server is running...");

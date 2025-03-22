@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
       cb(null, "uploads/"); // Files will be stored in the 'uploads/' folder
     },
     filename: function (req, file, cb) {
-      cb(null, `${Date.now()}-${file.profile}`);
+      cb(null, `${Date.now()}-${file.originalname}`);
     },
   });
 

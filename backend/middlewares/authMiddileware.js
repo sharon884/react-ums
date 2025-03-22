@@ -6,6 +6,7 @@ const protect = async ( req , res , next) => {
     try {
      console.log(req.cookies);
         const token = req.cookies.jwt;
+        console.log(token)
     
         if ( !token ) {
             return res.status(STATUS_CODES.UNAUTHORIZED).json({ message : "No token, authorization denied!"});        
