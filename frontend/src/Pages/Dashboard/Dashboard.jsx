@@ -24,7 +24,7 @@ const Dashboard = () => {
     </div>
     
     <div className="dashboard-buttons">
-      <button onClick={() => navigate("/profile")} className="dashboard-button">
+      <button onClick={() => navigate("/edit-profile")} className="dashboard-button">
         Edit Profile
       </button>
       <button onClick={() => navigate("/upload-img")} className="dashboard-button">

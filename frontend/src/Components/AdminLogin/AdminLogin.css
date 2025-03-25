@@ -1,0 +1,48 @@
+
+.admin-login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 350px;
+    margin: auto;
+    text-align: center;
+    color: white;
+  }
+  
+  .admin-login-container h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    color: #f39c12;
+  }
+  
+  .admin-login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .admin-login-container input::placeholder {
+    color: #ccc;
+  }
+  
+  .admin-login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .admin-login-container button:hover {
+    background: #e67e22;
+  }
+  

@@ -22,15 +22,15 @@ const Signup = () => {
       });
       const data = await response.json();
       if ( response.ok ) {
-         dispatch(setUser(data.user));
-         dispatch(login());
+        //  dispatch(setUser(data.user));
+         dispatch(login(data.user));
          navigate("/profile");
       }else {
         alert(data.message);
       }
     } catch ( error ) {
       console.error( "signup error:".error)
-      alert("something went wrong!")
+      alert(error)
     }
   }
   return (

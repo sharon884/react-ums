@@ -38,3 +38,15 @@
 .nav-button:hover {
   background: #357ABD;
 }
+.admin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-left: 10px;
+}
+
+.admin-icon:hover {
+  color: #f39c12;
+}
+

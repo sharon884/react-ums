@@ -1,0 +1,310 @@
+/* Admin Dashboard Container */
+.admin-dashboard {
+  background: linear-gradient(135deg, #1e1e2e, #25233b);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  color: #ffffff;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  min-height: 80vh; /* Ensures the layout doesn't collapse */
+  overflow-x: auto; /* Prevents overflow on smaller screens */
+}
+
+/* Title with better spacing */
+.admin-dashboard-title {
+  font-size: 26px;
+  color: #00c2ff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 1rem;
+}
+
+/* Table Container for better scrolling */
+.admin-table-container {
+  max-height: 60vh; /* Keeps the table contained */
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* Table Styling */
+.admin-user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  min-width: 600px; /* Ensures proper layout */
+}
+
+.admin-user-table th,
+.admin-user-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  white-space: nowrap; /* Prevents text from breaking awkwardly */
+}
+
+.admin-user-table th {
+  background: linear-gradient(135deg, #282848, #1e1e2e);
+  color: #00c2ff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.admin-user-table td {
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+/* Buttons */
+.admin-edit-btn,
+.admin-delete-btn {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.admin-edit-btn {
+  background: linear-gradient(135deg, #00c2ff, #0084ff);
+  color: white;
+}
+
+.admin-delete-btn {
+  background: linear-gradient(135deg, #ff4c4c, #ff1e1e);
+  color: white;
+}
+
+.admin-edit-btn:hover {
+  background: linear-gradient(135deg, #0084ff, #005f99);
+  transform: scale(1.05);
+}
+
+.admin-delete-btn:hover {
+  background: linear-gradient(135deg, #ff1e1e, #b30000);
+  transform: scale(1.05);
+}
+
+/* Pagination Controls */
+.pagination-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 1rem;
+}
+
+.pagination-button {
+  background: linear-gradient(135deg, #0084ff, #005f99);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+  background: linear-gradient(135deg, #005f99, #003366);
+  transform: scale(1.05);
+}
+
+.pagination-button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  font-size: 15px;
+  font-weight: bold;
+  color: #00c2ff;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .admin-user-table {
+    font-size: 12px;
+  }
+
+  .admin-edit-btn,
+  .admin-delete-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .pagination-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+/* Admin Dashboard Container */
+.admin-dashboard {
+  background: linear-gradient(135deg, #1e1e2e, #25233b);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  color: #ffffff;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  min-height: 80vh; /* Ensures the layout doesn't collapse */
+  overflow-x: auto; /* Prevents overflow on smaller screens */
+}
+
+/* Title with better spacing */
+.admin-dashboard-title {
+  font-size: 26px;
+  color: #00c2ff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 1rem;
+}
+
+/* Table Container for better scrolling */
+.admin-table-container {
+  max-height: 60vh; /* Keeps the table contained */
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* Table Styling */
+.admin-user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  min-width: 600px; /* Ensures proper layout */
+}
+
+.admin-user-table th,
+.admin-user-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  white-space: nowrap; /* Prevents text from breaking awkwardly */
+}
+
+.admin-user-table th {
+  background: linear-gradient(135deg, #282848, #1e1e2e);
+  color: #00c2ff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.admin-user-table td {
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+/* Buttons */
+.admin-edit-btn,
+.admin-delete-btn {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.admin-edit-btn {
+  background: linear-gradient(135deg, #00c2ff, #0084ff);
+  color: white;
+}
+
+.admin-delete-btn {
+  background: linear-gradient(135deg, #ff4c4c, #ff1e1e);
+  color: white;
+}
+
+.admin-edit-btn:hover {
+  background: linear-gradient(135deg, #0084ff, #005f99);
+  transform: scale(1.05);
+}
+
+.admin-delete-btn:hover {
+  background: linear-gradient(135deg, #ff1e1e, #b30000);
+  transform: scale(1.05);
+}
+
+/* Pagination Controls */
+.pagination-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 1rem;
+}
+
+.pagination-button {
+  background: linear-gradient(135deg, #0084ff, #005f99);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+  background: linear-gradient(135deg, #005f99, #003366);
+  transform: scale(1.05);
+}
+
+.pagination-button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  font-size: 15px;
+  font-weight: bold;
+  color: #00c2ff;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .admin-user-table {
+    font-size: 12px;
+  }
+
+  .admin-edit-btn,
+  .admin-delete-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .pagination-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

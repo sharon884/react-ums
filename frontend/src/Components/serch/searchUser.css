@@ -1,0 +1,80 @@
+
+.search-user-container {
+    background: linear-gradient(135deg, #1e1e2e, #25233b);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  
+  .search-user-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .search-user-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .search-user-loading {
+    color: #f1c40f;
+    font-weight: bold;
+  }
+  
+  .search-user-error {
+    color: #ff4c4c;
+    font-weight: bold;
+  }
+  
+  
+  .search-user-list {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  
+  .search-user-item {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+
+  .search-user-name {
+    font-weight: bold;
+    color: #00c2ff;
+  }
+  
+  .search-user-email {
+    font-style: italic;
+    color: #ddd;
+  }
+  
+  
+  .search-user-notfound {
+    margin-top: 10px;
+    color: #ff4c4c;
+    font-weight: bold;
+  }
+  
+
+  @media (max-width: 600px) {
+    .search-user-container {
+      width: 95%;
+      padding: 1rem;
+    }
+  }
+  

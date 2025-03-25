@@ -1,0 +1,54 @@
+/* Edit Profile Styles */
+.edit-profile-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    width: 350px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .edit-profile-container h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .edit-profile-container label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 5px;
+  }
+  
+  .edit-profile-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .edit-profile-container input::placeholder {
+    color: #ccc;
+  }
+  
+  .edit-profile-container button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-profile-container button:hover {
+    background: #45a049;
+  }

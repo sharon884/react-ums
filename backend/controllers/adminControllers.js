@@ -2,7 +2,7 @@ const User = require("../models/user");
 const { comparePassword } = require("../utils/hashedPassword");
 const genarateToken = require("../utils/genarateToken");
 const STATUS_CODES = require("../constants/statusCode");
-
+const { hashPassword } = require ("../utils/hashedPassword.js");
 const adminLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -132,10 +132,47 @@ const deleteUser = async ( req , res, ) => {
     res.status(STATUS_CODES.SERVER_ERROR).json( { message: "unknown error!"});
   }
 }
+
+const createUser = async ( req , res ) => {
+  try {
+    const { name , email , password , role } = req.body;
+    
+
+    const UserExist =  await User.findOne({email});
+    if ( UserExist ) {
+      return res.status(STATUS_CODES.UNAUTHORIZED).json( { message : "user alredy exist !!"});
+    }
+    const hashedPassword = await hashPassword(password);
+    const user = await User.create({
+      name,
+      email,
+      password : hashedPassword,
+      role:  role ||"user"
+    });
+    console.log("++++++++++++++++++",user)
+    if ( user ) {
+      res.status(STATUS_CODES.CREATED).json({message:"user created successfully",user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+    });
+    }else {
+      res.status(STATUS_CODES.UNAUTHORIZED).json({ message: "Invalid user data" });
+    }
+  }catch (error) {
+    console.error("Error creating user:", error.message);
+    res.status(STATUS_CODES.SERVER_ERROR).json({ message: "Something went wrong" });
+  }
+};
+
+
 module.exports = {
   adminLogin,
   getAdminDashboard,
   getUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  createUser
 };

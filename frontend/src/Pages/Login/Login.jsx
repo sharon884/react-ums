@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login , setUser } from "../../redux/slices/authslice";
+import { login  } from "../../redux/slices/authslice";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
 
@@ -11,6 +11,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isAuthenticated  } = useSelector((state) => state.auth);
+  
 
   const handleLogin =  async(e) => {
     e.preventDefault();
@@ -22,9 +23,9 @@ const Login = () => {
         credentials: "include",
       });
       const data = await response.json();
-       
+     
       if ( response.ok) {
-        dispatch(login());
+        dispatch(login(data.user));
         const profileResponse = await fetch("http://localhost:5006/api/users/profile" , {
           method : "GET" ,
           credentials : "include"
@@ -32,10 +33,11 @@ const Login = () => {
 
         const profiledata = await profileResponse.json();
         if ( profileResponse.ok ) {
-          dispatch(setUser(profiledata.user));
+          dispatch(login(profiledata.user));
+          navigate("/profile");
         } 
 
-       navigate("/profile");
+      
 
       }else {
         alert(data.message)
@@ -49,7 +51,7 @@ const Login = () => {
   
   return (
     <div className="login-container">
-    <h2 className="login-title">Login</h2>
+    <h2 className="login-title">User Login</h2>
     <form className="login-form" onSubmit={handleLogin}>
       <input
         type="email"
