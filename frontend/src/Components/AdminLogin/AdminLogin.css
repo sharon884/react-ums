@@ -1,48 +1,63 @@
-
 .admin-login-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    width: 350px;
-    margin: auto;
-    text-align: center;
-    color: white;
-  }
-  
-  .admin-login-container h2 {
-    margin-bottom: 1rem;
-    font-size: 24px;
-    color: #f39c12;
-  }
-  
-  .admin-login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-  
-  .admin-login-container input::placeholder {
-    color: #ccc;
-  }
-  
-  .admin-login-container button {
-    width: 100%;
-    padding: 10px;
-    background: #f39c12;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .admin-login-container button:hover {
-    background: #e67e22;
-  }
-  
+  /* Updated to white background with black border for clean theme */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000;
+  width: 350px;
+  margin: auto;
+  text-align: center;
+  color: #000;
+}
+
+.admin-login-container h2 {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  /* Changed from orange to black for clean contrast */
+  color: #000;
+  font-weight: 600;
+}
+
+.admin-login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  /* Updated to white background with black border */
+  border: 2px solid #000;
+  border-radius: 5px;
+  background: white;
+  color: #000;
+  font-size: 14px;
+}
+
+.admin-login-container input::placeholder {
+  /* Updated placeholder color to gray for better readability */
+  color: #666;
+}
+
+.admin-login-container input:focus {
+  /* Added focus state with black outline */
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-container button {
+  width: 100%;
+  padding: 10px;
+  /* Changed from orange to black background */
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.admin-login-container button:hover {
+  /* Updated hover state to dark gray instead of orange */
+  background: #333;
+}
