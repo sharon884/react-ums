@@ -3,6 +3,7 @@ import { useSelector , useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/authslice";
 import { useNavigate } from "react-router-dom";
 import "./Edit.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 const Edit = () => {
 const { user } = useSelector((state)=>state.auth);
 const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const handleChange = (e) => {
 const handleSubmit = async (e) => {
 e.preventDefault();
 try {
-    const response = await fetch("http://localhost:5006/api/users/profile" , {
+    const response = await fetch(`${API}/users/profile` , {
         method : "PUT",
         headers : {
             "Content-Type": "application/json",
