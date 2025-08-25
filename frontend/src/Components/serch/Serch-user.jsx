@@ -6,6 +6,7 @@ const SearchUser = () => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const API = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     if (search.length === 0) return;
@@ -14,7 +15,7 @@ const SearchUser = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5006/api/admin/users?search=${search}`,{
+          `${API}/admin/users?search=${search}`,{
             
             method : "GET",
             headers: {
