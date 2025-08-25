@@ -1,63 +1,110 @@
-
 .signup-container {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
+  /* Updated to white background with black border instead of dark semi-transparent */
+  background: white;
+  border: 2px solid #000;
   padding: 30px;
   width: 350px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: all 0.3s ease;
+  margin: 20px auto;
 }
 
+.signup-container:hover {
+  /* Added subtle hover effect */
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
 
 .signup-title {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  /* Changed from white to black text */
+  color: #000;
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
-
 
 .signup-form {
   display: flex;
   flex-direction: column;
 }
 
-
 .signup-input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border: none;
+  /* Updated to white background with black border instead of semi-transparent */
+  border: 2px solid #000;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  transition: all 0.3s;
+  background: white;
+  color: #000;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .signup-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  /* Changed placeholder color to dark gray */
+  color: #666;
 }
 
 .signup-input:focus {
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid #4a90e2;
+  /* Updated focus state to use black border with subtle shadow */
+  background: white;
+  border: 2px solid #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
-
 .signup-button {
-  background: #4a90e2;
+  /* Changed from blue to black background */
+  background: #000;
   color: white;
   padding: 12px;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .signup-button:hover {
-  background: #357ABD;
+  /* Updated hover effect to use gray instead of blue */
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-button:active {
+  /* Added active state for better interaction feedback */
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Added responsive design for mobile devices */
+@media (max-width: 480px) {
+  .signup-container {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .signup-title {
+    font-size: 20px;
+  }
+
+  .signup-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .signup-button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
