@@ -1,97 +1,195 @@
-
 .edit-user-container {
-    background: linear-gradient(135deg, #1e1e2e, #25233b);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    color: #ffffff;
-    text-align: center;
-    backdrop-filter: blur(15px);
+  /* Updated to white background with black border and shadow */
+  background: white;
+  border: 2px solid #000;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  color: #000;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.edit-user-container:hover {
+  /* Added hover effect */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.edit-user-title {
+  /* Changed to black color */
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.edit-user-loading {
+  /* Updated loading color */
+  color: #666;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
   }
-  
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.edit-user-error {
+  /* Updated error color for better contrast */
+  color: #dc3545;
+  font-weight: bold;
+  background: #f8d7da;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.edit-user-label {
+  font-size: 16px;
+  font-weight: 600;
+  /* Changed to black color */
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.edit-user-input,
+.edit-user-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  /* Updated to white background with black border */
+  border: 2px solid #000;
+  background: white;
+  color: #000;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.edit-user-input:focus,
+.edit-user-select:focus {
+  /* Added focus effects */
+  border-color: #333;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.edit-user-input:hover,
+.edit-user-select:hover {
+  /* Added hover effects */
+  border-color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-user-input::placeholder {
+  /* Updated placeholder color */
+  color: #666;
+}
+
+.edit-user-select {
+  cursor: pointer;
+}
+
+.edit-user-select option {
+  /* Styled select options */
+  background: white;
+  color: #000;
+  padding: 8px;
+}
+
+.edit-user-button {
+  /* Updated to black theme with animations */
+  background: #000;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-user-button:hover {
+  /* Enhanced hover effects */
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.edit-user-button:active {
+  /* Added active state */
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-user-button:disabled {
+  /* Added disabled state */
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+  .edit-user-container {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
   .edit-user-title {
-    font-size: 24px;
-    color: #00c2ff;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-size: 20px;
   }
-  .edit-user-loading {
-    color: #f1c40f;
-    font-weight: bold;
-  }
-  
-  .edit-user-error {
-    color: #ff4c4c;
-    font-weight: bold;
-  }
-  
-  
-  .edit-user-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  
-  .edit-user-label {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ddd;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 5px;
-  }
-  
-  
+
   .edit-user-input,
   .edit-user-select {
-    width: 100%;
     padding: 10px;
-    border-radius: 6px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 14px;
-    outline: none;
+    font-size: 16px; /* Prevents zoom on iOS */
   }
-  
-  .edit-user-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+  .edit-user-container {
+    padding: 1rem;
+    border-radius: 8px;
   }
-  
-  .edit-user-select {
-    cursor: pointer;
+
+  .edit-user-title {
+    font-size: 18px;
+    margin-bottom: 1rem;
   }
-  
-  
-  .edit-user-button {
-    background: linear-gradient(135deg, #00c2ff, #0084ff);
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s ease-in-out;
+
+  .edit-user-form {
+    gap: 1rem;
   }
-  
-  .edit-user-button:hover {
-    background: linear-gradient(135deg, #0084ff, #005f99);
-    transform: scale(1.05);
-  }
-  
-  
-  @media (max-width: 600px) {
-    .edit-user-container {
-      width: 95%;
-      padding: 1.5rem;
-    }
-  }
-  
+}
