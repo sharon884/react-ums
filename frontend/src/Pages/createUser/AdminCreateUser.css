@@ -1,92 +1,149 @@
-
 .create-user-container {
-    background: linear-gradient(135deg, #1e1e2e, #25233b);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    width: 50%;
-    margin: auto;
-    color: #ffffff;
-    text-align: center;
-    backdrop-filter: blur(15px);
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: auto;
+  color: #000000;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.create-user-container:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.create-user-title {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-user-input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #000000;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.create-user-input:focus {
+  outline: none;
+  border-color: #333333;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.create-user-input::placeholder {
+  color: #666666;
+}
+
+.create-user-select {
+  width: 85%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #000000;
+  font-size: 16px;
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.create-user-select:focus {
+  outline: none;
+  border-color: #333333;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.create-user-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #000000;
+  background: #000000;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.create-user-button:hover:not(:disabled) {
+  background: #333333;
+  border-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.create-user-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.create-user-button:disabled {
+  background: #cccccc;
+  border-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.create-user-error {
+  color: #dc3545;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .create-user-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .create-user-input,
+  .create-user-select {
+    width: 95%;
   }
 
   .create-user-title {
-    font-size: 24px;
-    color: #00c2ff;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 20px;
   }
-  
+}
 
-  .create-user-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  
-
-  .create-user-input {
-    width: 80%;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .create-user-input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
+@media (max-width: 480px) {
+  .create-user-container {
+    width: 95%;
+    padding: 1rem;
   }
 
-  .create-user-select {
-    width: 85%;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    transition: 0.3s ease-in-out;
+  .create-user-title {
+    font-size: 18px;
   }
-  
-  .create-user-select:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
 
+  .create-user-input,
+  .create-user-select,
   .create-user-button {
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background: linear-gradient(135deg, #0084ff, #005f99);
-    color: white;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .create-user-button:hover {
-    background: linear-gradient(135deg, #005f99, #003366);
-    transform: scale(1.05);
-  }
-  
-  .create-user-button:disabled {
-    background: gray;
-    cursor: not-allowed;
-  }
-  
-
-  .create-user-error {
-    color: red;
-    margin-top: 10px;
     font-size: 14px;
   }
-  
+}
