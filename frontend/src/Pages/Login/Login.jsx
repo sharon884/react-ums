@@ -27,7 +27,7 @@ const Login = () => {
      
       if ( response.ok) {
         dispatch(login(data.user));
-        const profileResponse = await fetch("http://localhost:5006/api/users/profile" , {
+        const profileResponse = await fetch(`${API}/users/profile` , {
           method : "GET" ,
           credentials : "include"
         });
