@@ -14,6 +14,7 @@ import AdminLogin from './Components/AdminLogin/AdminLogin.jsx';
 import EditUser from './Components/EditAccessadmin/EditAdmin.jsx';
 import Serchuser from './Components/serch/Serch-user.jsx';
 import AdminCreateUser from './Pages/createUser/AdminCreateUser.jsx';
+import NotFound from './Pages/NotFound/NotFound.jsx';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
         <Route path='/edit-user/:id' element={<EditUser/>} />
         <Route path='/serch-user' element={<Serchuser/>} />
         <Route path='/admin-create-user' element={<AdminCreateUser/>} />
-     
+        <Route path='*' element={<NotFound/> } /> 
     </Routes>
     
     </BrowserRouter>
