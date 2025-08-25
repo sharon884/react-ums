@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers } from "../../redux/slices/adminSlices";
 import { useNavigate } from "react-router-dom";
 import "./AdminDashBoard.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const AdminDashBoard = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const AdminDashBoard = () => {
     if (!window.confirm("Are you wnat to delete this user!")) return;
     try {
       const response = await fetch(
-        `http://localhost:5006/api/admin/users/${userId}`,
+        `${API}/admin/users/${userId}`,
         {
           method: "DELETE",
           credentials: "include",
