@@ -10,7 +10,7 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5174", // Replace with your frontend URL
+    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Replace with your frontend URL
     credentials: true, // Allow cookies in requests
 })
 );//intrace with frontend and backend
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
     res.send("Server is running...");
   });
   
-const PORT = process.env.PORT||5001
+const PORT = process.env.PORT||5006
 const Mongo_URI = process.env.Mongo_URI|| "mongodb://localhost:27017/user";
 
 
