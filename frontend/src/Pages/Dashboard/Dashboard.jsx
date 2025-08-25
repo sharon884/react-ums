@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import "./Dashboard.css";
 import { useNavigate } from 'react-router-dom';
+const API = import.meta.env.VITE_API_BASE_URL;
 const Dashboard = () => {
   const { user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Dashboard = () => {
       
       {user.profileImage && (
         <div className="profile-image-container">
-          <img src={`http://localhost:5006/${user.profileImage}`} alt="Profile" className="profile-image" />
+          <img src={`${API}/${user.profileImage}`} alt="Profile" className="profile-image" />
         </div>
       )}
     </div>
