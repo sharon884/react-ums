@@ -1,9 +1,10 @@
 import { createSlice , createAsyncThunk,  } from "@reduxjs/toolkit";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 //fetching all users with asyncThunk
 export const fetchUsers = createAsyncThunk( "admin/fetchUsers" , async ( { currentPage , usersPerPage }, { rejectWithValue}) => {
     try {
-        const response = await fetch(`http://localhost:5006/api/admin/dashboard?page=${currentPage}&limit=${usersPerPage}` , {
+        const response = await fetch(`${API}/admin/dashboard?page=${currentPage}&limit=${usersPerPage}` , {
             method : "GET" ,
             credentials : "include",
         });
@@ -23,7 +24,7 @@ export const fetchUsers = createAsyncThunk( "admin/fetchUsers" , async ( { curre
 
 export const addUser = createAsyncThunk("admin/addUser" , async ( userData , { rejectWithValue }) => {
     try {
-        const response = await fetch("http://localhost:5006/api/admin/create-user" , {
+        const response = await fetch(`${API}/admin/create-user` , {
             method : "POST",
             headers: {
                 "Content-Type": "application/json",
