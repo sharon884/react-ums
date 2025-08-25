@@ -1,33 +1,36 @@
+/* Updated to white and black theme with animations */
 /* Admin Dashboard Container */
 .admin-dashboard {
-  background: linear-gradient(135deg, #1e1e2e, #25233b);
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  color: #ffffff;
+  color: #000000;
   text-align: center;
-  backdrop-filter: blur(15px);
-  min-height: 80vh; /* Ensures the layout doesn't collapse */
-  overflow-x: auto; /* Prevents overflow on smaller screens */
+  min-height: 80vh;
+  overflow-x: auto;
+  transition: all 0.3s ease;
 }
 
 /* Title with better spacing */
 .admin-dashboard-title {
   font-size: 26px;
-  color: #00c2ff;
+  color: #000000;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
   padding-top: 1rem;
+  transition: color 0.3s ease;
 }
 
 /* Table Container for better scrolling */
 .admin-table-container {
-  max-height: 60vh; /* Keeps the table contained */
+  max-height: 60vh;
   overflow-y: auto;
   margin-bottom: 1rem;
 }
@@ -37,215 +40,102 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  min-width: 600px; /* Ensures proper layout */
+  min-width: 600px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .admin-user-table th,
 .admin-user-table td {
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #000000;
   text-align: center;
-  white-space: nowrap; /* Prevents text from breaking awkwardly */
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 
 .admin-user-table th {
-  background: linear-gradient(135deg, #282848, #1e1e2e);
-  color: #00c2ff;
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
-.admin-user-table td {
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-}
-
-/* Buttons */
-.admin-edit-btn,
-.admin-delete-btn {
-  padding: 6px 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  margin: 3px;
-  font-size: 13px;
-  font-weight: bold;
-  transition: 0.3s ease-in-out;
-}
-
-.admin-edit-btn {
-  background: linear-gradient(135deg, #00c2ff, #0084ff);
-  color: white;
-}
-
-.admin-delete-btn {
-  background: linear-gradient(135deg, #ff4c4c, #ff1e1e);
-  color: white;
-}
-
-.admin-edit-btn:hover {
-  background: linear-gradient(135deg, #0084ff, #005f99);
-  transform: scale(1.05);
-}
-
-.admin-delete-btn:hover {
-  background: linear-gradient(135deg, #ff1e1e, #b30000);
-  transform: scale(1.05);
-}
-
-/* Pagination Controls */
-.pagination-container {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 1rem;
-}
-
-.pagination-button {
-  background: linear-gradient(135deg, #0084ff, #005f99);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  transition: 0.3s ease-in-out;
-}
-
-.pagination-button:hover {
-  background: linear-gradient(135deg, #005f99, #003366);
-  transform: scale(1.05);
-}
-
-.pagination-button:disabled {
-  background: gray;
-  cursor: not-allowed;
-}
-
-.page-indicator {
-  font-size: 15px;
-  font-weight: bold;
-  color: #00c2ff;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 768px) {
-  .admin-dashboard {
-    width: 95%;
-    padding: 1rem;
-  }
-  
-  .admin-user-table {
-    font-size: 12px;
-  }
-
-  .admin-edit-btn,
-  .admin-delete-btn {
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-
-  .pagination-container {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-/* Admin Dashboard Container */
-.admin-dashboard {
-  background: linear-gradient(135deg, #1e1e2e, #25233b);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+  background: #000000;
   color: #ffffff;
-  text-align: center;
-  backdrop-filter: blur(15px);
-  min-height: 80vh; /* Ensures the layout doesn't collapse */
-  overflow-x: auto; /* Prevents overflow on smaller screens */
-}
-
-/* Title with better spacing */
-.admin-dashboard-title {
-  font-size: 26px;
-  color: #00c2ff;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  padding-top: 1rem;
-}
-
-/* Table Container for better scrolling */
-.admin-table-container {
-  max-height: 60vh; /* Keeps the table contained */
-  overflow-y: auto;
-  margin-bottom: 1rem;
-}
-
-/* Table Styling */
-.admin-user-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  min-width: 600px; /* Ensures proper layout */
-}
-
-.admin-user-table th,
-.admin-user-table td {
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-  white-space: nowrap; /* Prevents text from breaking awkwardly */
-}
-
-.admin-user-table th {
-  background: linear-gradient(135deg, #282848, #1e1e2e);
-  color: #00c2ff;
   font-size: 16px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .admin-user-table td {
-  background: rgba(255, 255, 255, 0.1);
+  background: #ffffff;
   font-size: 14px;
+  color: #000000;
+}
+
+.admin-user-table tbody tr:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
 }
 
 /* Buttons */
 .admin-edit-btn,
 .admin-delete-btn {
-  padding: 6px 12px;
-  border: none;
+  padding: 8px 16px;
+  border: 2px solid transparent;
   cursor: pointer;
   border-radius: 6px;
   margin: 3px;
   font-size: 13px;
   font-weight: bold;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .admin-edit-btn {
-  background: linear-gradient(135deg, #00c2ff, #0084ff);
-  color: white;
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
 }
 
 .admin-delete-btn {
-  background: linear-gradient(135deg, #ff4c4c, #ff1e1e);
-  color: white;
+  background: #dc3545;
+  color: #ffffff;
+  border-color: #dc3545;
 }
 
 .admin-edit-btn:hover {
-  background: linear-gradient(135deg, #0084ff, #005f99);
-  transform: scale(1.05);
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .admin-delete-btn:hover {
-  background: linear-gradient(135deg, #ff1e1e, #b30000);
-  transform: scale(1.05);
+  background: #ffffff;
+  color: #dc3545;
+  border-color: #dc3545;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+/* Search User Button */
+.admin-dashboard button {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.admin-dashboard button:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Pagination Controls */
@@ -254,36 +144,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   padding-bottom: 1rem;
 }
 
 .pagination-button {
-  background: linear-gradient(135deg, #0084ff, #005f99);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  border: none;
-  transition: 0.3s ease-in-out;
+  border: 2px solid #000000;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
-.pagination-button:hover {
-  background: linear-gradient(135deg, #005f99, #003366);
-  transform: scale(1.05);
+.pagination-button:hover:not(:disabled) {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pagination-button:disabled {
-  background: gray;
+  background: #cccccc;
+  color: #666666;
+  border-color: #cccccc;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .page-indicator {
   font-size: 15px;
   font-weight: bold;
-  color: #00c2ff;
+  color: #000000;
+  padding: 8px 12px;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+/* Loading and Error States */
+.admin-loading {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.admin-error {
+  color: #dc3545;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+  background: #fff5f5;
+  border: 1px solid #dc3545;
+  border-radius: 6px;
+  margin: 10px 0;
 }
 
 /* Media Query for Mobile */
@@ -292,19 +212,50 @@
     width: 95%;
     padding: 1rem;
   }
-  
+
   .admin-user-table {
     font-size: 12px;
   }
 
+  .admin-user-table th,
+  .admin-user-table td {
+    padding: 8px;
+  }
+
   .admin-edit-btn,
   .admin-delete-btn {
-    padding: 5px 10px;
+    padding: 6px 12px;
     font-size: 12px;
+    margin: 2px;
   }
 
   .pagination-container {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .pagination-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .admin-dashboard-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-dashboard {
+    padding: 0.5rem;
+  }
+
+  .admin-user-table {
+    min-width: 400px;
+  }
+
+  .admin-user-table th,
+  .admin-user-table td {
+    padding: 6px;
+    font-size: 11px;
   }
 }
