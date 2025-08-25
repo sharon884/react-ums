@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/slices/authslice"
 import "./AdminLogin.css";
+
+const API = import.meta.env.VITE_API_BASE_URL;
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +17,7 @@ const AdminLogin = () => {
   e.preventDefault();
   setError("");
    try {
-    const response = await fetch("http://localhost:5006/api/admin/login" , {
+    const response = await fetch(`${API}/admin/login` , {
         method : "POST" ,
         headers: {
             "Content-Type": "application/json",

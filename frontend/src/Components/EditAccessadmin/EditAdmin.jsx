@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./EditAdmin.css"
+const API = import.meta.env.VITE_API_BASE_URL;
+
 const EditAdmin = () => {
   const { id } = useParams();
   const navigate = useNavigate(); 
@@ -24,7 +26,7 @@ const EditAdmin = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:5006/api/admin/users/${id}`, {
+      const response = await fetch(`${API}/admin/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
