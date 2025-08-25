@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login  } from "../../redux/slices/authslice";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const Login = () => {
   const [ email , setEmail ] = useState("");
@@ -16,7 +17,7 @@ const Login = () => {
   const handleLogin =  async(e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5006/api/users/login" , {
+      const response = await fetch(`${API}/users/login` , {
         method : "POST",
         headers : {"Content-Type": "application/json"},
         body : JSON.stringify( { email , password}),
