@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/authslice";
 import { useNavigate } from "react-router-dom";
 import "./upload.css"
+const API = import.meta.env.VITE_API_BASE_URL;
 const Upload = () => {
     const [ selectedFile , setSelectedFile ] = useState(null);
     const [ loading , setLoading ] = useState(false);
@@ -24,7 +25,7 @@ const Upload = () => {
         formData.append("profileImage",selectedFile);
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:5006/api/users/profile/upload" ,{
+            const response = await fetch(`${API}/users/profile/upload` ,{
                 method :"Post" ,
                 body:formData,
                 credentials :"include",
