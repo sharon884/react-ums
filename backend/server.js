@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   });
   
 const PORT = process.env.PORT||5006
-const Mongo_URI = process.env.Mongo_URI|| "mongodb://localhost:27017/user";
+const Mongo_URI = process.env.Mongo_URI;
 
 
 mongoose.connect(Mongo_URI)
