@@ -7,8 +7,11 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes");
 const cookieParser = require("cookie-parser");
 const adminRoutes = require("./routes/adminRoutes");
+const morgan = require("morgan");
 
 const app = express();
+
+app.use(morgan("dev"));
 app.use(cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173", // Replace with your frontend URL
     credentials: true, // Allow cookies in requests
