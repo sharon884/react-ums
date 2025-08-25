@@ -1,67 +1,152 @@
-
 .upload-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: white;
-    text-align: center;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Changed from dark gradient to white background with black border */
+  background: white;
+  border: 2px solid #000;
+  color: #000;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.upload-container:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.upload-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  /* Changed from white to black */
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.upload-input {
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  /* Changed from semi-transparent to white background */
+  background: white;
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+.upload-input:hover {
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.upload-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.upload-input::-webkit-file-upload-button {
+  /* Changed from blue to black */
+  background: #000;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.upload-input::-webkit-file-upload-button:hover {
+  /* Changed from blue hover to gray hover */
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.upload-button {
+  /* Changed from blue to black */
+  background: #000;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.upload-button:hover:not(:disabled) {
+  /* Changed from blue hover to gray hover */
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.upload-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.upload-button:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Added responsive design */
+@media (max-width: 768px) {
+  .upload-container {
+    margin: 10px;
+    padding: 30px 15px;
   }
-  
 
   .upload-title {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .upload-input {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    font-size: 16px;
-    margin-bottom: 15px;
-    cursor: pointer;
+    max-width: 100%;
   }
-  
-  .upload-input::-webkit-file-upload-button {
-    background: #4a90e2;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .upload-input::-webkit-file-upload-button:hover {
-    background: #357ABD;
-  }
-  
-  
+
   .upload-button {
-    background: #4a90e2;
-    color: white;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s;
+    padding: 12px 24px;
+    font-size: 15px;
   }
-  
-  .upload-button:hover {
-    background: #357ABD;
-    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .upload-container {
+    padding: 25px 10px;
   }
-  
-  .upload-button:disabled {
-    background: gray;
-    cursor: not-allowed;
+
+  .upload-title {
+    font-size: 22px;
+    margin-bottom: 20px;
   }
-  
+
+  .upload-input {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .upload-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
