@@ -12,11 +12,23 @@ const morgan = require("morgan");
 const app = express();
 
 app.use(morgan("dev"));
-app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Replace with your frontend URL
-    credentials: true, // Allow cookies in requests
-})
-);//intrace with frontend and backend
+
+const allowedOrigins = [
+  "http://localhost:5173",          // Local development (Vite default)
+  "https://builtbysharon.site",     // Production frontend
+];
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies/credentials
+  })
+);
 app.use(express.json());//formata data to json 
 app.use(cookieParser());
 app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // Serve uploaded files as static
@@ -27,9 +39,10 @@ app.get("/", (req, res) => {
   
 const PORT = process.env.PORT||5006
 const Mongo_URI = process.env.Mongo_URI;
-
+console.log(Mongo_URI)
 
 mongoose.connect(Mongo_URI)
+
 .then(()=>console.log("mongo db connected suceesfully!"))
 .catch((err)=>console.log("mongo db connecting failed!"));
 
