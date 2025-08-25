@@ -4,6 +4,7 @@ import  {useDispatch } from "react-redux";
 import { login,setUser } from "../../redux/slices/authslice.js";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch ("http://localhost:5006/api/users/signup" , {
+      const response = await fetch (`${API}/users/signup` , {
         method : "Post",
         headers : { "Content-Type": "application/json" },
         body :  JSON.stringify({ name, email, password ,role:"user" }),
