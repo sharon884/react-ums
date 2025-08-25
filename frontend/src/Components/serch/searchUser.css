@@ -1,80 +1,126 @@
-
 .search-user-container {
-    background: linear-gradient(135deg, #1e1e2e, #25233b);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-    color: #ffffff;
+  /* Updated to white background with black border theme */
+  background: #ffffff;
+  border: 2px solid #000000;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.search-user-container:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.search-user-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  /* Updated to white background with black border */
+  border: 2px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-user-input:focus {
+  border-color: #333333;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.search-user-input::placeholder {
+  /* Updated placeholder color for white background */
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.search-user-loading {
+  /* Updated to black color */
+  color: #000000;
+  font-weight: bold;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
   }
-  
-  
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.search-user-error {
+  /* Kept red for visibility but darker shade */
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.search-user-list {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.search-user-item {
+  padding: 12px;
+  /* Updated to light gray background with black border */
+  background: #f8f9fa;
+  border: 1px solid #000000;
+  margin: 8px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-user-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-user-name {
+  font-weight: bold;
+  /* Updated to black color */
+  color: #000000;
+}
+
+.search-user-email {
+  font-style: italic;
+  /* Updated to dark gray color */
+  color: #666666;
+}
+
+.search-user-notfound {
+  margin-top: 10px;
+  /* Updated to dark red color */
+  color: #dc3545;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .search-user-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
   .search-user-input {
-    width: 100%;
     padding: 10px;
-    border-radius: 6px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 14px;
-    outline: none;
+    font-size: 16px; /* Prevent zoom on iOS */
   }
-  
-  .search-user-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .search-user-loading {
-    color: #f1c40f;
-    font-weight: bold;
-  }
-  
-  .search-user-error {
-    color: #ff4c4c;
-    font-weight: bold;
-  }
-  
-  
-  .search-user-list {
-    margin-top: 1rem;
-    text-align: left;
-  }
-  
-  
-  .search-user-item {
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
-    border-radius: 6px;
-    font-size: 14px;
-  }
-  
+}
 
-  .search-user-name {
-    font-weight: bold;
-    color: #00c2ff;
+@media (max-width: 480px) {
+  .search-user-container {
+    padding: 0.8rem;
+    margin: 10px;
   }
-  
-  .search-user-email {
-    font-style: italic;
-    color: #ddd;
-  }
-  
-  
-  .search-user-notfound {
-    margin-top: 10px;
-    color: #ff4c4c;
-    font-weight: bold;
-  }
-  
-
-  @media (max-width: 600px) {
-    .search-user-container {
-      width: 95%;
-      padding: 1rem;
-    }
-  }
-  
+}
