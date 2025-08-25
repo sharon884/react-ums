@@ -14,8 +14,11 @@ const app = express();
 app.use(morgan("dev"));
 
 const allowedOrigins = [
-  "http://localhost:5173",          // Local development (Vite default)
-  "https://builtbysharon.site",     // Production frontend
+  "http://localhost:5173",                       // Local development
+  "https://builtbysharon.site",                  // Main frontend
+  "https://app.builtbysharon.site",             // Custom frontend domain
+  "https://react-ums-theta.vercel.app",         // Vercel preview domain 1
+  "https://react-ums-sharons-projects-b294a284.vercel.app" // Vercel preview domain 2
 ];
 app.use(
   cors({
